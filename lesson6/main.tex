@@ -18,6 +18,7 @@
 %\usepackage{beamerarticle}
 
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{tabto}
  
@@ -60,7 +61,7 @@
 \title{Programming with Python}
 
 % A subtitle is optional and this may be deleted
-\subtitle{Lesson 6: PyGame and Flask!}
+\subtitle{Lesson 6: Flask}
 
 %\author{F.~Author\inst{1} \and S.~Another\inst{2}}
 % - Give the names in the same order as the appear in the paper.
@@ -130,6 +131,64 @@
   \end{itemize}  
 \end{frame}
 
+\section{Web Servers}
+
+\begin{frame}{What is a web server?}
+
+\pause
+A web server is \pause something which \textbf{serves} you things. \pause \\
+
+When you go on a website, you, the client, ask a server for something.\pause
+This file could be an html document, an image or something completely different.
+
+\end{frame}
+
+\begin{frame}{HTTP requests}
+
+\pause Specifically, you send the server an HTTP request. What is HTTP? \pause \\
+HTTP - HyperTextTransferProtocol \pause - The protocol which the world wide web relies on \\
+
+\pause There are many types of HTTP request. The most common two used are:
+\begin{itemize}
+  \item[] GET\pause \qquad gets you data from a location/service\pause
+   \item[] POST\pause \qquad sends your data to a location/service
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{A little more on HTTP}
+
+\pause
+Status code responses\pause
+\begin{itemize}
+  \item 200\pause
+  \item 304\pause
+  \item 400\pause
+  \item 401\pause
+  \item 403\pause
+  \item 404\pause
+  \item 500
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{APIs}
+
+Any website you go on, you will have requested, using GET, the web page from a server somewhere. Any website is an example of a web server.\\ \pause
+APIs are also examples of web servers.\\ \pause
+They serve over the HTTP protocol, but instead of serving you a website, they serve information (or take in information and do something neat with it).
+
+\end{frame}
+
+\begin{frame}{An example}
+
+\url{https://pokeapi.co/}
+
+\end{frame}
+
+
+
 \section{Flask}
 
 \begin{frame}{Python in action: Flask}
@@ -138,24 +197,26 @@ Flask is a web framework, written in python allowing us to write web apps in pyt
 We can use it to write interactive websites or neat web services.
 \end{frame}
 
+
+\begin{frame}{Getting started with flask - Setting up our environment}
+We first need pip. To install pip, i'd suggest googling it. It can be tricky to install (though if you're ubuntu based, apt-get install python3-pip is all you need to do ;)\\ \pause
+To install flask - \textit{pip install flask}
+
+\end{frame}
+
 \begin{frame}{Getting started with flask - Setting up our environment}
 
 \pause
 Folder structure:
 \begin{itemize}
-  \item[] my-awesome-flask-app/\pause \qquad root directory of code
-  \item[] my-awesome-flask-app/views/\pause \qquad directory of html to be rendered
-  \item[] my-awesome-flask-app/public/\pause \qquad directory of static files e.g. css \& js
+  \item[] my-awesome-flask-app/\pause \qquad root directory of code\pause
+  \item[] my-awesome-flask-app/templates/\pause \qquad directory of html to be rendered\pause
+  \item[] my-awesome-flask-app/public/\pause \qquad directory of static files e.g. css \& js\pause
   \item[] my-awesome-flask-app/app.py\pause \qquad where our code will start
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Getting started with flask - Setting up our environment}
-
-To install flask - \textit{pip install flask}
-
-\end{frame}
 
 \begin{frame}{Hello World!}
 
@@ -193,28 +254,27 @@ To install flask - \textit{pip install flask}
 
 \end{frame}
 
-\begin{frame}{A side point on HTTP}
+\begin{frame}{Endpoints}
 
-\pause
-GET vs POST (vs others)
-\pause
-Status code responses\pause
-\begin{itemize}
-  \item 200\pause
-  \item 304\pause
-  \item 400\pause
-  \item 401\pause
-  \item 403\pause
-  \item 404\pause
-  \item 500
-  \end{itemize}
+An endpoint is a \textit{destination}. When you go to 127.0.0.1:5000 you are going to the root endpoint \textit{/}.\pause \\
+If instead you go to 127.0.0.1:5000/hello/world, you are going to the endpoint \textit{/hello/world}.
 
 \end{frame}
 
-\begin{frame}{Endpoints}
+\begin{frame}{Templates}
 
-An endpoint is a \textit{destination} 
+Templates are pretty much HTML++.\\ \pause
+They are pre-rendered on the server side and can be passed in values.
 
+\end{frame}
+
+\begin{frame}{Jinja2}
+
+Flask, by default, uses the Jinja2 templating engine. It's really powerful and has some neat features.
+
+\end{frame}
+
+\begin{frame}{Putting everything together}
 
 \end{frame}
 
@@ -224,17 +284,20 @@ An endpoint is a \textit{destination}
   To summarise:
   \pause
   \begin{itemize}
-  \item We learnt about tuples and their uses in returning multiple values\pause
-  \item We learnt about dictionaries\pause
-  \item We discussed objects\pause
-  \item We finished writing our own text based game!
+  \item We learnt about flask and it's ability to serve us\pause
+  \item We learnt about pip and how it can help us manage packages\pause
+  \item We learnt about templates and how they can render stuff for us\pause
+  \item We made a neat album search tool!
   \end{itemize}
 \end{frame}
 
-\begin{frame}{For next week}
-Source code plus lecture slides will be available online soon after the lesson.\\
-If you are new to HackSocNotts, please join us on \textit{http://hacksocnotts.slack.com}.\\
-If you have any questions, feel free to ask now or over slack.\\
+\begin{frame}{THAT IS ALL}
+I hope you all enjoyed our experience going through python.\\
+Next semester, Amy is going to be teaching much, much more on web apps through a powerful web language, ruby on rails.\\
+\end{frame}
+
+\begin{frame}{Hope you all have a good holiday!}
+
 \end{frame}
 
 \end{document}
